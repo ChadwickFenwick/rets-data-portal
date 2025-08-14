@@ -1,0 +1,22 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+numReplicas = 1
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[env]
+# Railway will automatically provide PORT environment variable
+# These are the default environment variables you can override
+STREAMLIT_SERVER_PORT = "8080"
+STREAMLIT_SERVER_ADDRESS = "0.0.0.0"
+STREAMLIT_SERVER_HEADLESS = "true"
+STREAMLIT_SERVER_ENABLE_CORS = "false"
+STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION = "false"
+STREAMLIT_BROWSER_GATHER_USAGE_STATS = "false"
+
+# Health check configuration
+RAILWAY_HEALTHCHECK_PATH = "/health"
+RAILWAY_HEALTHCHECK_TIMEOUT = "30s"

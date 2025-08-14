@@ -411,8 +411,8 @@ def render_query_builder():
         apply_query_values_from_flags()
         
         # Intelligent query generator
-        with st.expander("🤖 Intelligent Query Generator", expanded=True):
-            render_intelligent_query_generator(st.session_state.metadata, protocol)
+        #with st.expander("🤖 Intelligent Query Generator", expanded=True):
+        #    render_intelligent_query_generator(st.session_state.metadata, protocol)
         
         st.markdown("---")
         
@@ -425,4 +425,5 @@ def render_query_builder():
         # Display query results if available
         render_query_results()
     else:
+
         st.info("Please connect to a server and load metadata to use the query builder.") 
